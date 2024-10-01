@@ -26,7 +26,7 @@ public class Exercise12 {
         coche.brake();
 
         // Girar el volante 20 grados
-        coche.turnAngleOfWheels(20);
+        coche.turnAngleOfWheels(45);
 
         // Intentar girar el volante más de 45 grados
         coche.turnAngleOfWheels(45);

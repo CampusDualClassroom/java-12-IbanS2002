@@ -45,34 +45,40 @@ public class Car {
     public void accelerate() {
         if (this.tachometer == 0) {
             System.out.println("Primero debes encender el coche.");
-        } else if (this.speedometer + tachometer > MAX_SPEED) {
+        } else if (this.speedometer + this.tachometer > MAX_SPEED) {
             this.speedometer = MAX_SPEED;
             System.out.println("Has alcanzado la velocidad máxima de " + MAX_SPEED + " km/h.");
         } else {
-            this.speedometer += tachometer;
+            this.speedometer += this.tachometer;
             System.out.println("Acelerando, nueva velocidad: " + this.speedometer + " km/h.");
         }
     }
 
     // Método para frenar
     public void brake() {
-        if (this.speedometer < 0) {
+        if (this.speedometer - this.tachometer < 0) {
             this.speedometer = 0;
             System.out.println("El coche está completamente detenido.");
         } else {
-            this.speedometer --;
+            this.speedometer = this.speedometer - this.tachometer;
             System.out.println("Frenando, nueva velocidad: " + this.speedometer + " km/h.");
         }
     }
 
     // Método para girar las ruedas
     public void turnAngleOfWheels(int angle) {
-        if (angle > 45 || angle < -45) {
-            System.out.println("No se puede girar el volante más de 45 o -45 grados.");
-        } else {
+        if (angle >= 45 ) {
+            System.out.println("No se puede girar el volante más de 45");
+            this.wheelsAngle=45;
+        }else if(angle<=-45) {
+            System.out.println("No se puede girar el volante menos de -45");
+            this.wheelsAngle=-45;
+        }else{
             this.wheelsAngle = angle;
             System.out.println("Ángulo de las ruedas ajustado a: " + this.wheelsAngle + " grados.");
         }
+
+
     }
 
     // Verificar si el tacómetro es 0
@@ -104,6 +110,6 @@ public class Car {
     }
 
     public boolean isTachometerGreaterThanZero() {
-        return this.tachometer==0;
+        return this.tachometer>0;
     }
 }
