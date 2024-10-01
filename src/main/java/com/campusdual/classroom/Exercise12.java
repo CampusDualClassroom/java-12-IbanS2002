@@ -8,7 +8,7 @@ public class Exercise12 {
         //coche.accelerate();
         //coche.stop();
         //coche.showDetails();
-        coche.showDetails();
+        //coche.showDetails();
 
         // Intentar encender el coche
         coche.start();
@@ -29,7 +29,7 @@ public class Exercise12 {
         coche.turnAngleOfWheels(20);
 
         // Intentar girar el volante más de 45 grados
-        coche.turnAngleOfWheels(40);
+        coche.turnAngleOfWheels(45);
 
         // Intentar poner marcha atrás mientras el coche está en movimiento
         coche.setReverse(true);
